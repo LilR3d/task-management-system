@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Task Management System</title>
-</head>
-<body>
+  <head>
+    <title>Task Management System</title>
+  </head>
+  <body>
+    <h1>Task Management System</h1>
+    <script>
+      // Two arrays to store task names and durations
+      let taskNames = [];
+      let taskDurations = [];
 
-<script>
-// Two arrays to store task names and durations
-let taskNames = [];
-let taskDurations = [];
+      // Ask user for how many tasks to enter
+      let howMany = Number(prompt("How many tasks do you want to enter?"));
 
-// Ask user for how many tasks to enter
-let howMany = Number(prompt("How many tasks do you want to enter?"));
+      // Loop that repeats for each task
+      for (let i = 0; i < howMany; i++) {
+        // Ask for the task name
+        let name = prompt("Enter a task name:");
+        taskNames.push(name); // Add it to the taskNames array
 
-// Loop that repeats for each task
-for (let i = 0; i < howMany; i++) {
+        // Ask for estimated time in hours
+        let hours = Number(prompt("Enter estimated time (hours):"));
+        taskDurations.push(hours); // Add it to the taskDurations array
+      }
 
-// Ask for the task name
-let name = prompt("Enter a task name:");
-taskNames.push(name); // Add it to the taskNames array
+      // Show arrays in table format
+      console.log("Task Names:");
+      console.table(taskNames);
 
-// Ask for estimated time in hours
-let hours = Number(prompt("Enter estimated time (hours):"));
-taskDurations.push(hours); // Add it to the taskDurations array
-}
-
-// Show arrays in table format
-console.log("Task Names:");
-console.table(taskNames);
-
-console.log("Task Durations (hours):");
-console.table(taskDurations);
-</script>
-
-</body>
+      console.log("Task Durations (hours):");
+      console.table(taskDurations);
+    </script>
+  </body>
 </html>
